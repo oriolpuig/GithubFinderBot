@@ -4,10 +4,13 @@ namespace Techdencias.Bots.Ginder.Models
 {
     public class User
     {
+        /// <summary>
+        /// Custom user object parsing JSON from Github.
+        /// </summary>
+        /// <param name="dataJSON">JSON from Github</param>
         public User(string dataJSON)
         {
             JObject jObject = JObject.Parse(dataJSON);
-            //JToken jUser = jObject["user"];
             name = (string)jObject["name"];
             login = (string)jObject["login"];
             id = (int)jObject["id"];
